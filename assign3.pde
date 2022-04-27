@@ -18,7 +18,7 @@ PImage soil4;
 PImage soil5;
 PImage lifeImg;
 PImage stone1;
-
+PImage stone2;
 int hx=80,hy=80,aa=10,bb=10;
 
 
@@ -28,7 +28,7 @@ float cameraOffsetY = 0;
 boolean debugMode = false;
 
 void setup() {
-	size(640, 200, P2D);
+	size(640, 480, P2D);
 	// Enter your setup code here (please put loadImage() here or your game will lag like crazy)
   
 	bg = loadImage("img/bg.jpg");
@@ -48,6 +48,7 @@ void setup() {
   soil5=loadImage("img/soil5.png");
   lifeImg= loadImage("img/life.png");
   stone1 =loadImage("img/stone1.png");
+  stone2 =loadImage("img/stone2.png");
 }
 
 void draw() {
@@ -170,11 +171,72 @@ void draw() {
    image(stone1,160,1360);
    image(stone1,400,1360);
    image(stone1,480,1360);
-   image(stone1,80,1120);
-   image(stone1,160,1120);
-   image(stone1,400,1120);
-   image(stone1,480,1120);
-    
+   image(stone1,80,1440);
+   image(stone1,160,1440);
+   image(stone2,160,1440);
+   image(stone1,320,1440);
+   image(stone1,400,1440);
+   image(stone2,400,1440);
+   image(stone1,560,1440);
+   image(stone1,0,1520);
+   image(stone1,80,1520);
+   image(stone2,80,1520);
+   image(stone1,240,1520);
+   image(stone1,320,1520);
+   image(stone2,320,1520);
+   image(stone1,480,1520);
+   image(stone1,560,1520);
+   image(stone2,560,1520);
+   image(stone1,0,1600);
+   image(stone2,0,1600);
+   image(stone1,160,1600);
+   image(stone1,240,1600);
+   image(stone2,240,1600);
+   image(stone1,400,1600);
+   image(stone1,480,1600);
+   image(stone2,480,1600);
+   image(stone1,80,1680);
+   image(stone1,160,1680);
+   image(stone2,160,1680);
+   image(stone1,320,1680);
+   image(stone1,400,1680);
+   image(stone2,400,1680);
+   image(stone1,560,1680);
+   image(stone1,0,1760);
+   image(stone1,80,1760);
+   image(stone2,80,1760);
+   image(stone1,240,1760);
+   image(stone1,320,1760);
+   image(stone2,320,1760);
+   image(stone1,480,1760);
+   image(stone1,560,1760);
+   image(stone2,560,1760);
+   image(stone1,0,1840);
+   image(stone2,0,1840);
+   image(stone1,160,1840);
+   image(stone1,240,1840);
+   image(stone2,240,1840);
+   image(stone1,400,1840);
+   image(stone1,480,1840); 
+   image(stone2,480,1840); 
+   image(stone1,80,1920);
+   image(stone1,160,1920);
+    image(stone2,160,1920);
+   image(stone1,320,1920);
+   image(stone1,400,1920);
+   image(stone2,400,1920);
+   image(stone1,560,1920);
+   image(stone1,0,2000);
+   image(stone1,80,2000);
+   image(stone2,80,2000);
+   image(stone1,240,2000);
+   image(stone1,320,2000);
+   image(stone2,320,2000);
+   image(stone1,480,2000);
+    image(stone1,560,2000);
+   image(stone2,560,2000);
+  
+  
     
 }
 
@@ -182,7 +244,7 @@ void draw() {
     image(gh,hx,hy);
 		// Health UI
 image( lifeImg,10,aa);
-image( lifeImg,80,bb);
+
 
 		break;
 
@@ -223,37 +285,36 @@ void keyPressed(){
       case 'w':
       debugMode = true;
       cameraOffsetY += 80;
-      hy -=80;
-      aa -=80;
-      bb -=80;
+      
       break;
 
       case 's':
       debugMode = true;
       cameraOffsetY -= 80;
-      hy +=80;
-      aa +=80;
-      bb -=80;
+     
       break;
 
       case 'a':
       if(playerHealth > 0) playerHealth --;
-      hx -=80;
+    
       break;
       
 
       case 'd':
       if(playerHealth < 5) playerHealth ++;
-      hx +=80;
+    
       break;
+    }
       switch(keyCode){
-case UP:
+      case UP:
 cameraOffsetY += 80;
+debugMode = true;
       hy -=80;
       aa -=80;
       bb -=80;
 break;
 case DOWN:
+debugMode = true;
 cameraOffsetY -= 80;
       hy +=80;
       aa +=80;
@@ -267,10 +328,8 @@ case RIGHT:
 break;
 default:
 break;
-}
-}
+      }
     }
-}
 
 void keyReleased(){
 }
